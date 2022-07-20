@@ -39,7 +39,7 @@ class Tag(models.Model):
 
 
 class Post(models.Model):
-    title = models.CharField(max_length=150)
+    title = models.CharField(max_length=1000)
     content = HTMLField()
     publishing_date = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(blank=True,null=True,upload_to='uploads/')
