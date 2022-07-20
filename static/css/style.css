@@ -1710,7 +1710,6 @@ button:focus {
 
 .reservation_form_area .res_form_inner:before {
   content: "";
-  background: url(../img/contact-shap-1.png);
   position: absolute;
   left: -125px;
   height: 421px;
@@ -1723,7 +1722,6 @@ button:focus {
 
 .reservation_form_area .res_form_inner:after {
   content: "";
-  background: url(../img/contact-shap-2.png);
   position: absolute;
   right: -125px;
   height: 421px;
@@ -3133,7 +3131,8 @@ h6 {
 }
 
 .confirm-checkbox input:checked + label {
-  background: url(../img/elements/success-check.png) no-repeat center center/cover;
+  background: url(../img/elements/success-check
+  ) no-repeat center center/cover;
   border: none;
 }
 
