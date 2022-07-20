@@ -409,7 +409,6 @@ button:focus {
 
 .home_banner_area .banner_inner {
   position: relative;
-  background: url(../img/banner/home-banner.jpg) no-repeat scroll center center;
   min-height: 600px;
 }
 
@@ -480,7 +479,6 @@ button:focus {
 }
 
 .blog_banner .banner_inner .overlay {
-  background: url(../img/banner/banner-2.jpg) no-repeat scroll center center;
   opacity: .5;
   height: 125%;
   position: absolute;
