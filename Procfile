@@ -1,0 +1,1 @@
+web gunicorn Fantom.wsgi:application –log-file –

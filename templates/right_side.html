@@ -1,0 +1,82 @@
+{% load static %}
+{% load custom_tags %}
+
+<div class="col-lg-4">
+                        <div class="blog_right_sidebar">
+                            <aside class="single_sidebar_widget search_widget">
+                                <form action="{% url 'search' %}" method="get">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search Posts" name="q">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button"><i class="lnr lnr-magnifier"></i></button>
+                                    </span>
+                                </div></form>
+                                    <!-- /input-group -->
+                                <div class="br"></div>
+                            </aside>
+                            <aside class="single_sidebar_widget author_widget">
+                                <img class="author_img rounded-circle" src="{% static "img/blog/author.png" %}" alt="">
+                                <h4>Honest ChiefPoet Nzombe</h4>
+                                <p>Senior Blog Writer</p>
+                                <div class="social_icon">
+                                    <a href="https://www.youtube.com/channel/UC__nFk1bLgTC7I45lbiyp_Q"><i class="fa fa-youtube"></i></a>
+                                    <a href="https://www.youtube.com/channel/UC__nFk1bLgTC7I45lbiyp_Q">My Youtube Link</a>                                   
+                                </div>
+                                <p>
+                                    Honest ChiefPoet Nzombe I am Honest ( AKA. ChiefPoet) Nzombe 
+                                    from Zimbabwe – One of the most beautiful and creative countries in Africa. 
+                                    I share completely free Tech Information.
+                                     My mission and vision is to bring free and convinient knowledge 
+                                     to everyone who is kneen to know how most tech things are made or done.
+                                        Love you, stay calm, 
+                                       and keep creating, only your mind is the limits you can set, 
+                                    otherwise the world is ready to be explored in this Tech Era.
+                                     PEACE ..........!!!
+                                </p>
+                                <div class="br"></div>
+                            </aside>
+                            <aside class="single_sidebar_widget popular_post_widget">
+                                <h3 class="widget_title">Popular Posts</h3>
+                                {% hit_posts as posts %}
+                                {% for post in posts %}
+                                <div class="media post_item">
+                                    <img src="{{ post.image.url }}" alt="post" style="width:100px;height:60px">
+                                    <div class="media-body">
+                                        <a href="{% url 'detail' post.pk post.slug %}"><h3>{{ post.title }}</h3></a>
+                                        <p>Hit : {{ post.hit }}</p>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                                <div class="br"></div>
+                            </aside>
+                            <aside class="single_sidebar_widget">
+                                <a href="#"><img class="img-fluid" src="{% static "img/blog/add.jpg" %}" alt=""></a>
+                                <div class="br"></div>
+                            </aside>
+                            <aside class="single_sidebar_widget post_category_widget">
+                                <h4 class="widget_title">Post Categories</h4>
+                                <ul class="list cat-list">
+                                    {% categories as categories %}
+                                    {% for category in categories %}
+                                    <li>
+                                        <a href="{% url 'category_detail' pk=category.id slug=category.slug %}" class="d-flex justify-content-between">
+                                            <p>{{ category.title }}</p>
+                                            <p>{{ category.post_count }}</p>
+                                        </a>
+                                    </li>
+                                    {% endfor %}
+
+                                </ul>
+                                <div class="br"></div>
+                            </aside>
+                            <aside class="single-sidebar-widget tag_cloud_widget">
+                                <h4 class="widget_title">Tag Clouds</h4>
+                                <ul class="list">
+                                    {% tags as labels %}
+                                    {% for label in labels %}
+                                    <li><a href="{% url 'tag_detail' label.slug %}">{{ label }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </aside>
+                        </div>
+                    </div>
